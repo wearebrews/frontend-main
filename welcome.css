@@ -1,7 +1,9 @@
 h1{
     color: lightblue;
     position: fixed;
-    bottom: 200;
-    right: 2; 
+}
 
+h2{
+    position: absolute; 
+    top: 20000px
 }
