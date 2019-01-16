@@ -22,15 +22,10 @@ spec:
     spec:
       containers:
         - name: frontend-main
-          image: wearebrews/frontend_main:latest
+          image: wearebrews/frontend-main:latest
           ports:
             - containerPort: 8000
           resources:
             limits:
               cpu: "0.5"
               memory: "1Gi"
-          env:
-            - name: DJANGO_DEBUG
-              value: "False"
-  
-      
