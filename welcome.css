@@ -1,9 +1,17 @@
-h1{
+#w{
+    padding: 2%;
+    max-width: 250px;
+    /* Dersom displayet er mindre enn 250px er det ikke no problem */
+    text-align: center;
+    background-color: black;
     color: lightblue;
     position: fixed;
+    top: 50%;
+    right: 50%;
+
 }
 
 h2{
-    position: absolute; 
-    top: 20000px
+    position: fixed; 
+    top: 20px;
 }
