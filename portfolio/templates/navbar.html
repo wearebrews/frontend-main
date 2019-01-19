@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block navbar %}
+<div class="navbar">
+    <style scoped>
+        .navbar {
+            background-color: wheat;
+            position: absolute;
+            width: auto;
+            height: 3rem;
+            padding: 0 0 0 0;
+            opacity: 70%;
+        }
+    </style>
+    <nav class=navbar-item>
+        <style scoped>
+            .navbar-item li {
+                display: table-cell;
+                text-align: center;
+            }
+            .navbar-item ul {
+                width: 100%;
+                vertical-align: middle;
+                white-space: nowrap;
+                display: table;
+                table-layout:fixed;
+            }
+        </style>
+        <ul>
+            <style scoped>
+            </style>
+            {% for li in menu_items %}
+                <style>
+                    .{{li}} {
+                        {% if li == current_menu %}
+                            color: grey;
+                        {% else %}
+                            color: black;
+                        {% endif %}
+                    };
+                </style>
+                <li class="{{li}}">{{li}}</li>
+            {% endfor %}
+       </ul> 
+    </nav>
+</div>
+<div>
+    Something else
+</div>
+{% endblock navbar %}
