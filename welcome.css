@@ -1,17 +1,62 @@
+* {
+    box-sizing: border-box;
+  }
+
+#welcome_container{
+    background-color: blueviolet;
+    /* display: inline-block; */
+  
+
+}
+
+#text_over{
+    position: relative;
+   background-color: red;
+   overflow: hidden;
+   /* display: flex; */
+   text-align-last:center; 
+  
+}
+#welcome{
+    position: relative;
+    background-color: blue;
+    overflow: hidden;
+    text-align-last:center;
+}
+
+#text_under{
+    position: relative;
+    background-color: green;
+    overflow: hidden;   
+    text-align-last:center; 
+}
+
+.welcome_links{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+    /* overflow: hidden; */
+}
+
+p{
+    /* display: inline-block; */
+    /* flex: 0.5; */
+    display: inline-flex;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #w{
-    padding: 2%;
-    max-width: 250px;
-    /* Dersom displayet er mindre enn 250px er det ikke no problem */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 7.5vw;
     text-align: center;
-    background-color: black;
-    color: lightblue;
-    position: fixed;
-    top: 50%;
-    right: 50%;
-
+    margin-top: 0 ;
+    margin-bottom: 0;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
-h2{
-    position: fixed; 
-    top: 20px;
-}
+
