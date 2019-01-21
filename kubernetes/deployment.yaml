@@ -1,28 +1,28 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: wearebrews
+  name: portfolio
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-main
-  namespace: wearebrews
+  name: portfolio
+  namespace: portfolio
   labels:
-    app: frontend-main
+    app: portfolio
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-main
+      app: portfolio
   template:
     metadata:
       labels:
-        app: frontend-main
+        app: portfolio
     spec:
       containers:
-        - name: frontend-main
-          image: wearebrews/frontend-main:latest
+        - name: frontend-flask
+          image: wearebrews/portfolio:latest
           ports:
             - containerPort: 8000
           resources:
