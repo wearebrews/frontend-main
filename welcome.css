@@ -2,31 +2,44 @@
     box-sizing: border-box;
   }
 
-#welcome_container{
-    background-color: blueviolet;
-    /* display: inline-block; */
-  
+  @font-face {
+    font-family: myFirstFont;
+    src: url(Fonts/Gravity/Gravity-Regular.otf);
+  }
 
+  @keyframes fade {
+      from {opacity:0}
+      to {opacity: 1;}
+  }
+
+
+
+#welcome_container{
+    /* background-color: blueviolet; */
+    display: inline-block;
+    position: fixed;
+    top: 30%;
+    left: 30%;
 }
 
 #text_over{
     position: relative;
-   background-color: red;
+   /* background-color: red; */
    overflow: hidden;
    /* display: flex; */
-   text-align-last:center; 
-  
+   text-align-last:center;   
 }
+
 #welcome{
     position: relative;
-    background-color: blue;
+    /* background-color: blue; */
     overflow: hidden;
     text-align-last:center;
 }
 
 #text_under{
     position: relative;
-    background-color: green;
+    /* background-color: green; */
     overflow: hidden;   
     text-align-last:center; 
 }
@@ -35,8 +48,8 @@
     position: relative;
     width: 100%;
     height: 20%;
-    background-color: aqua;
-    /* overflow: hidden; */
+     /* overflow: hidden; */
+    
 }
 
 p{
@@ -47,16 +60,24 @@ p{
     margin-right: 2.5%;
     font-size: 1vw;
     font-family: Arial, Helvetica, sans-serif;
+    animation-name: fade;
+    animation-duration: 12s;
+    
+    
 }
 
 #w{
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: myFirstFont;
     font-size: 7.5vw;
     text-align: center;
     margin-top: 0 ;
     margin-bottom: 0;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    /* margin-left: 2.5%;
+    margin-right: 2.5%; */
+    animation-name: fade;
+    animation-duration: 10s;
+    letter-spacing: 5px;
 }
 
 
