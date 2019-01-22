@@ -15,4 +15,4 @@ RUN pip3 install -r requirements.txt
 
 #Run django app
 ENTRYPOINT [ "python3" ]
-CMD ["./portfolio/main.py"]
+CMD ["./run.py"]
