@@ -5,3 +5,12 @@ body {
     position: absolute;
     font-family: Quicksand, sans-serif;
 }
+
+
+.selected_menu_item {
+    color: grey
+}
+
+.menu_item {
+    color: black
+}
