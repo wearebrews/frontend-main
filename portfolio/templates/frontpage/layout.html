@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
-    <link href="static/common.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="static/welcome.css">
-    <title>Document</title>
-</head>
-<body>
-    {% include "navbar.html" %}
-    {% include "frontpage/welcome.html" %}
-    {% include "frontpage/aboutus.html" %}
-    {% include "frontpage/projects.html" %}
-    {% include "footer.html" %}
-</body>
-</html>
+{% extends "base_layout.html" %}
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="static/welcome.css">
+<link rel="stylesheet" type="text/css" href="static/aboutus.css">
+{% endblock css %}
+
+{% block content %}
+{% include "frontpage/welcome.html" %}
+{% include "frontpage/aboutus.html" %}
+{% include "frontpage/projects.html" %}
+{% endblock content %}
+
+
