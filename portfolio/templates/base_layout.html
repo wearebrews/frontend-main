@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block css %}
     <link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
     <link href="static/common.css" rel="stylesheet" type="text/css">
-    <title>Document</title>
+    {% endblock css %}
 </head>
 <body>
     {% include "navbar.html" %}
+    {% block content %}
+    {% endblock content %}
+    {% include "footer.html" %}
 </body>
 </html>
