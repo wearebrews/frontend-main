@@ -17,4 +17,4 @@ EXPOSE 5000
 
 #Run django app
 ENTRYPOINT [ "python3" ]
-CMD ["./portfolio/main.py"]
+CMD ["./run.py"]
