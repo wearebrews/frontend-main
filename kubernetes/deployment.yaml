@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: frontend-flask
-          image: wearebrews/portfolio:latest
+          image: wearebrews/portfolio:dev
           ports:
             - containerPort: 8000
           resources:
