@@ -8,7 +8,7 @@ from flask import render_template
 def main(menu=None):
     if isinstance(menu, str):
         menu = menu.upper()
-    menu_items = ["MAIN", "PROJECTS", "BLOG", "ABOUT"]
+    menu_items = ["All projects", "About us", "Photos"]
     return render_template("frontpage/layout.html", menu_items=menu_items, current_menu=menu)
 
 
