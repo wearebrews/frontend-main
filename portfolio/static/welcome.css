@@ -26,21 +26,17 @@
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 2; 
-    /* background-color: blueviolet; */
     align-items: center;
     
 }
 
 #text_over{
    position: relative;
-   /* background-color: red; */
-   /* display: flex; */
    text-align-last:center;   
 }
 
 #welcome{
     position: relative;
-    /* background-color: blue; */
     overflow: hidden;
     padding: 0;
     text-align:center;
@@ -48,7 +44,6 @@
 
 #text_under{
     position: relative;
-    /* background-color: green; */
     overflow: hidden;   
     text-align:center; 
 }
@@ -59,35 +54,36 @@
     display: inline-block;
     padding: 0;
     margin: 0;
-     /* overflow: hidden; */
     
 }
 
 p{
     display: inline-block;
-    /* flex: 0.5; */
     text-align: center;
     margin-left: 2.5%;
     margin-right: 2.5%;
+    font-family: suruma, sans-serif;
+    font-weight: 500;
+    font-style: normal;
     font-size: 1vw;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */ 
     animation-name: fade;
-    animation-duration: 12s;
+    animation-duration: 2s;
     
     
 }
 
 #w{
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: myFirstFont;
+    font-family: suruma, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    /* font-family: myFirstFont; */
     font-size: 7.5vw;
     text-align: center;
     margin-top: 0 ;
     margin-bottom: 0;
-    /* margin-left: 2.5%;
-    margin-right: 2.5%; */
     animation-name: fade;
-    animation-duration: 10s;
+    animation-duration: 2s;
     letter-spacing: 5px;
 }
 
