@@ -1,3 +1,2 @@
-# Frontend Main
-
-This is the frontend
+# portfolio
+Portfolio frontend site developed in python with flask 
