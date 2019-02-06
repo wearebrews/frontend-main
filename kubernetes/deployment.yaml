@@ -3,6 +3,20 @@ kind: Namespace
 metadata:
   name: portfolio
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: portfolio
+  name: portfolio
+spec:
+  type: LoadBalancer
+  selector:
+    app: portfolio
+  ports: 
+  - port: 80
+    targetPort: 80
+    name: http
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,10 +35,11 @@ spec:
         app: portfolio
     spec:
       containers:
-        - name: frontend-flask
+        - name: frontend
           image: wearebrews/portfolio:dev
+          imagePullPolicy: Always
           ports:
-            - containerPort: 8000
+            - containerPort: 80
           resources:
             limits:
               cpu: "0.5"
