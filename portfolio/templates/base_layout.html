@@ -10,9 +10,12 @@
     {% endblock css %}
 </head>
 <body>
+    <div id="navbar" style="position: fixed;">
     {% include "navbar.html" %}
+    </div>
     {% block content %}
     {% endblock content %}
     {% include "footer.html" %}
 </body>
+<script src="static/base.js"></script>
 </html>
