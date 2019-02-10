@@ -14,30 +14,7 @@ volumes: [
         def registry = "wearebrews/portfolio"
         def credentidal = "dockerhub"
 
-	stage('Build image') {
-	    when {
-	        allOf {
-			not {
-			    branch 'master'
-			};
-			not {
-			    branch 'develop'
-			}
-		}
-	    }
-	    container('docker') {
-	    	sh "docker build -t ${registry}:${commit} ."
-	    }
-	}
-
         stage('Build image') {
-	    when {
-	        anyOf { 
-		    branch 'master';
-		    branch 'develop'
-		}
-		
-	    }
             container('docker') {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding',
                 credentialsId: 'dockerhub',
