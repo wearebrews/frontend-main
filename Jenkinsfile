@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-		registry = "wearebrews/portfolio
+		registry = "wearebrews/portfolio"
 		credentidal = "dockerhub"
 	}
 	agent any
