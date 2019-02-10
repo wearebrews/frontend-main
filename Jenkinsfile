@@ -15,7 +15,15 @@ volumes: [
         def credentidal = "dockerhub"
         stage('Build image') {
             container('docker') {
-                sh "docker build -t ${registry}:${commit} ."
+                withCredentials([[$class: 'UsernamePasswordMultiBinding',
+                usernameVariable: 'DOCKER_HUB_USER',
+                passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
+                    sh """
+                    docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
+                    docker build -t ${registry}:${commit} .
+                    docker push ${registry}:${commit}
+                    """
+                }
             }
         }
     }
