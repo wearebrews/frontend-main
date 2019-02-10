@@ -13,8 +13,8 @@ volumes: [
         def credentidal = "dockerhub"
         stage('Build image') {
             container('docker') {
-                sh "docker build -t ${registry}:${commit}" .
-        }
+                sh "docker build -t ${registry}:${commit} ."
+            }
         }
     }
 }
