@@ -19,7 +19,7 @@ volumes: [
 	        allOf {
 			not {
 			    branch 'master'
-			},
+			};
 			not {
 			    branch 'develop'
 			}
