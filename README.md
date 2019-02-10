@@ -2,5 +2,5 @@
 Portfolio frontend site developed in python with flask 
 
 ## Build Status:
-- Develop: ![](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/develop/badge/icon)
-- Master: ![](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/master/badge/icon)
+- Develop: [![Build Status](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/develop/badge/icon)](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/develop/)
+- Master: [![Build Status](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/master/badge/icon)](https://build.shapingideas.fyi/job/portfolio/job/portfolio/job/master/)
