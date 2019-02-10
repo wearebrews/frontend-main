@@ -16,11 +16,13 @@ volumes: [
 
 	stage('Build image') {
 	    when {
-	        not {
-		    branch 'master'
-		}
-		not {
-		    branch 'develop'
+	        allOf {
+			not {
+			    branch 'master'
+			},
+			not {
+			    branch 'develop'
+			}
 		}
 	    }
 	    container('docker') {
