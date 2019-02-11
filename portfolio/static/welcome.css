@@ -14,14 +14,8 @@
 
 
 
-#welcome_grid {
-    display: grid;
-    height: 100%;
-    align-items: center;
-}
 #welcome_container{
-    align-items: center;
-    
+    margin: auto auto;
 }
 
 #text_over{
