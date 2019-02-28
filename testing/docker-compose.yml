@@ -1,4 +1,4 @@
-version: '3.1'
+version: '2.1'
 
 services: 
   db:
@@ -7,6 +7,10 @@ services:
     restart: always
     environment: 
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: portfolio
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
 
   adminer:
     image: adminer
@@ -23,3 +27,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_IP: db
       DJANGO_TOKEN: DEBUG_DJANGO_TOKEN
+    depends_on: 
+      db:
+        condition: service_healthy
