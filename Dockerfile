@@ -14,7 +14,6 @@ ENV PYTHONUNBUFFERED 1
 RUN pip3 install -r requirements.txt
 
 EXPOSE 80
-ENV FLASK_PORT=80
+ENV DJANGO_PORT 80
 #Run django app
-ENTRYPOINT [ "python3" ]
-CMD ["./run.py"]
+CMD ["python3", "./manage.py", "runserver", "0.0.0.0:80"]
