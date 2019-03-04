@@ -78,8 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portfolio',
+        'HOST': os.environ["MYSQL_IP"],
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': os.environ["MYSQL_ROOT_PASSWORD"],
     }
 }
 
