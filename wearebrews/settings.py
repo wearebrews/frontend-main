@@ -23,12 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xre7_+=oll6-a5m2^o31b9yqxy*dy1^u#jyy(fi#s%33!dxgq9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+ALLOWED_HOSTS = ["*", "shapingideas.fyi"]
+
 DEBUG = False
 try:
-    DEBUG = bool(os.environ["DEBUG_MODE"])
+    DEBUG = (os.environ["DEBUG_MODE"].upper() == "TRUE")
+    ALLOWED_HOSTS = ["*"]
 except KeyError:
     pass
-ALLOWED_HOSTS = ["shapingideas.fyi"]
 
 
 # Application definition
