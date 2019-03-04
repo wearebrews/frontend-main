@@ -1,11 +1,16 @@
-img:hover{
-    opacity: 0;
-}
 
-  body, html, .container-fluid, img{
+/* img:hover{
+    opacity: 0;
+} */
+
+body, html, .container-fluid, img{
     height: 100%;
   }
 
-  #w{
+#welcome{
     margin-top: 17.5%;
+  }
+
+  .col{
+    align-self: center;
   }
