@@ -8,6 +8,8 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: portfolio
+      MYSQL_USER: brew
+      MYSQL_PASSWORD: brew
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
@@ -25,6 +27,8 @@ services:
       - 8000:80
     environment: 
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: brew
+      MYSQL_PASSWORD: brew
       MYSQL_IP: db
       DJANGO_TOKEN: DEBUG_DJANGO_TOKEN
     depends_on: 

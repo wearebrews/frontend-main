@@ -23,9 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xre7_+=oll6-a5m2^o31b9yqxy*dy1^u#jyy(fi#s%33!dxgq9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = ["*", "shapingideas.fyi"]
 
-ALLOWED_HOSTS = []
+DEBUG = False
+try:
+    DEBUG = (os.environ["DEBUG_MODE"].upper() == "TRUE")
+    ALLOWED_HOSTS = ["*"]
+except KeyError:
+    pass
 
 
 # Application definition
@@ -79,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portfolio',
         'HOST': os.environ["MYSQL_IP"],
-        'USER': 'root',
-        'PASSWORD': os.environ["MYSQL_ROOT_PASSWORD"],
+        'USER': os.environ["MYSQL_USER"],
+        'PASSWORD': os.environ["MYSQL_PASSWORD"],
     }
 }
 

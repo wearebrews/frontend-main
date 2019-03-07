@@ -12,8 +12,9 @@ ENV PYTHONUNBUFFERED 1
 
 #Install dependencies
 RUN pip3 install -r requirements.txt
+RUN pip3 install gunicorn
 
 EXPOSE 80
 ENV DJANGO_PORT 80
 #Run django app
-CMD ["python3", "./manage.py", "runserver", "0.0.0.0:80"]
+CMD ["gunicorn", "wearebrews.wsgi", "--bind", "0.0.0.0:80"]
