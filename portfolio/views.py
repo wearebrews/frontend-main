@@ -1,16 +1,8 @@
-#Add views here
+from django.shortcuts import render
 
-from portfolio import app
-from flask import render_template
-
-@app.route("/")
-@app.route("/<menu>")
-def main(menu=None):
-    if isinstance(menu, str):
-        menu = menu.upper()
-    menu_items = ["MAIN", "PROJECTS", "BLOG", "ABOUT"]
-    return render_template("frontpage/layout.html", menu_items=menu_items, current_menu=menu)
+def index(request):
+    return render(request, 'portfolio/index.html')
 
 
-if __name__=="__main__":
-    print("Main")
+def pictures(request):
+    return render(request, 'portfolio/pictures.html')

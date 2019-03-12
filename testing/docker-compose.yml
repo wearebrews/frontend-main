@@ -1,0 +1,36 @@
+version: '2.1'
+
+services: 
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: brew
+      MYSQL_PASSWORD: brew
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  portfolio:
+    build: ..
+    restart: always
+    ports:
+      - 8000:80
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: brew
+      MYSQL_PASSWORD: brew
+      MYSQL_IP: db
+      DJANGO_TOKEN: DEBUG_DJANGO_TOKEN
+    depends_on: 
+      db:
+        condition: service_healthy
