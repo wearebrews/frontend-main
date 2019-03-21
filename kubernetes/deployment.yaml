@@ -28,10 +28,27 @@ spec:
       labels:
         app: portfolio
     spec:
+      volumes:
+      - name: statics
+        emptyDir: {}
+      - name: nginx-config
+        configMap:
+          name: nginx-config
       containers:
+        - name: nginx
+          image: nginx
+          volumeMounts:
+          - name: statics
+            mountPath: /usr/share/nginx/html
+          - name: nginx-config
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
         - name: frontend
           image: wearebrews/portfolio:dev
           imagePullPolicy: Always
+          volumeMounts:
+          - name: statics
+            mountPath: /statics
           ports:
             - containerPort: 80
           resources:
@@ -48,3 +65,4 @@ spec:
                 key: MYSQL_ROOT_PASSWORD
           - name: MYSQL_USER
             value: brew
+        
