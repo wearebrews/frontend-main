@@ -34,23 +34,29 @@ spec:
       - name: nginx-config
         configMap:
           name: nginx-config
+      - name: tmp
+        emptyDir: {}
       containers:
         - name: nginx
           image: nginx
+          ports:
+            - containerPort: 80
           volumeMounts:
           - name: statics
-            mountPath: /usr/share/nginx/html
+            mountPath: /usr/share/nginx/html/static
           - name: nginx-config
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
+          - name: tmp
+            mountPath: /tmp
         - name: frontend
           image: wearebrews/portfolio:dev
           imagePullPolicy: Always
           volumeMounts:
           - name: statics
             mountPath: /statics
-          ports:
-            - containerPort: 80
+          - name: tmp
+            mountPath: /tmp
           resources:
             limits:
               cpu: "0.25"
