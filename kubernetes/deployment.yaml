@@ -54,7 +54,7 @@ spec:
           imagePullPolicy: Always
           volumeMounts:
           - name: statics
-            mountPath: /statics
+            mountPath: /static
           - name: tmp
             mountPath: /tmp
           resources:
