@@ -28,12 +28,35 @@ spec:
       labels:
         app: portfolio
     spec:
+      volumes:
+      - name: statics
+        emptyDir: {}
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      - name: tmp
+        emptyDir: {}
       containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - name: statics
+            mountPath: /usr/share/nginx/html/static
+          - name: nginx-config
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+          - name: tmp
+            mountPath: /tmp
         - name: frontend
           image: wearebrews/portfolio:e6f4cf5836f43cddfcd9db7400ede6b3ff987ad0
           imagePullPolicy: Always
-          ports:
-            - containerPort: 80
+          volumeMounts:
+          - name: statics
+            mountPath: /static
+          - name: tmp
+            mountPath: /tmp
           resources:
             limits:
               cpu: "0.25"

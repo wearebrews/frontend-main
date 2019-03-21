@@ -83,9 +83,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'portfolio',
-        'HOST': os.environ["MYSQL_IP"],
-        'USER': os.environ["MYSQL_USER"],
-        'PASSWORD': os.environ["MYSQL_PASSWORD"],
+        'HOST': os.getenv("MYSQL_IP", ""),
+        'USER': os.getenv("MYSQL_USER", ""),
+        'PASSWORD': os.getenv("MYSQL_PASSWORD", ""),
     }
 }
 
@@ -126,3 +126,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.getenv("DJANGO_STATIC_ROOT", "statics")
