@@ -1,22 +1,48 @@
+<!-- Laster inn css -->
+{% load static %}
+<!-- Header -->
 {% include 'partials/header.html' %}
 
-<div class="container-fluid h-100">
 
-    <div class="row h-100 bg-danger">
+<div class="container-fluid">
+
+    <!-- Welcome row -->
+    <div class="row h-100 align-self-center">
         <div class="col h-100 ">
-           <p class="font-weight-normal text-xl-center">Welcome</p>
+           <h1 id="welcome" class="font-weight-normal text-xl-center display-1 align-middle">Welcome</h1>
         </div>
     </div>
         
-    <div class="row h-100 bg-warning">
-        <div class="col h-100">
-            <p class="font-weight-normal text-xl-center">Projects</p>
-        </div>
+    <!-- Projects row -->
+    <div class="row h-100 border-top" id="projects">
+        {% include 'portfolio/projects.html' %}
     </div>
 
-    <div class="row h-100 bg-info">
-            <div class="col h-100">
-                <p class="font-weight-normal text-xl-center">About us</p>
+    <!-- About us row -->
+    <div class="row h-75 overflow-auto border-top" id="aboutus">
+            <div class="col-sm ">
+                <h2>Simen Berg-Hansen</h2>
+                <h4>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?)</h4>
             </div>
+            <div class="col-sm ">
+                <img class="img-fluid" src="static/images/sh.jpg" alt="">
+            </div>
+            <div class="col-sm">
+                <h2 class="text-l"> Håvard Skåra Mellbye</h2>
+                <h4>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens: Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? (How long, O Catiline, will you abuse our patience? And for how long will that madness of yours mock us?)</h4>
+               
+            </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row bg-dark ">
+        <div class="col h-100">
+            {% include 'partials/footer.html' %}
         </div>
+    </div>
+    
 </div>
+
+
+
+
