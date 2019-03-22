@@ -50,7 +50,7 @@ spec:
           - name: tmp
             mountPath: /tmp
         - name: frontend
-          image: wearebrews/portfolio:e6f4cf5836f43cddfcd9db7400ede6b3ff987ad0
+          image: wearebrews/portfolio:adc45f2f5dae5d2ab4f7a0e2b8abc806648b3014
           imagePullPolicy: Always
           volumeMounts:
           - name: statics
