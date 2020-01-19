@@ -1,31 +1,14 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  namespace: portfolio
-  name: mysql-pv
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/mnt/data"
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   namespace: portfolio
   name: mysql-pv-claim
 spec:
-  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: Secret
@@ -67,8 +50,16 @@ spec:
       labels:
         app: mysql
     spec: 
+      volumes:
+        - name: mysql-volume
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
+      
       containers:
         - image: mysql:5.6
+          volumeMounts:
+          - mountPath: "/var/lib/mysql"
+            name: mysql-volume
           name: mysql
           readinessProbe:
             exec:
@@ -81,6 +72,11 @@ spec:
             initialDelaySeconds: 30
             periodSeconds: 10
             timeoutSeconds: 5
+          resources:
+            limits:
+              memory: "512Mi"
+            requests:
+              memory: "128Mi"
           env:
           - name: MYSQL_ROOT_PASSWORD
             valueFrom:
